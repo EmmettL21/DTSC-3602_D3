@@ -1,0 +1,13 @@
+Instructions:
+Compare a baseline and at least two
+candidate models using the same
+validation method and metrics.
+Justify selection; examine errors
+across relevant groups or
+conditions.
+
+What will be submitted:
+Runnable evaluation code; 2–3 page
+modeling note with comparison
+results, selected model, error
+analysis, and limitations
