@@ -1,0 +1,370 @@
+{
+  "n_resumes": 240,
+  "n_pairs": 12000,
+  "n_postings": 1198,
+  "candidates_per_resume": {
+    "on_target": 10,
+    "off_target": 40
+  },
+  "models": {
+    "random": {
+      "auc": {
+        "mean": 0.5034,
+        "ci": [
+          0.4895,
+          0.5164
+        ]
+      },
+      "precision_at_10": {
+        "mean": 0.1983,
+        "ci": [
+          0.1838,
+          0.2133
+        ]
+      },
+      "ndcg_at_10": {
+        "mean": 0.1951,
+        "ci": [
+          0.1791,
+          0.2121
+        ]
+      },
+      "seniority_mismatch_at_10": {
+        "mean": 0.1829,
+        "ci": [
+          0.1621,
+          0.2042
+        ]
+      }
+    },
+    "tfidf_cosine": {
+      "auc": {
+        "mean": 0.6919,
+        "ci": [
+          0.6676,
+          0.7145
+        ]
+      },
+      "precision_at_10": {
+        "mean": 0.4083,
+        "ci": [
+          0.3792,
+          0.4379
+        ]
+      },
+      "ndcg_at_10": {
+        "mean": 0.439,
+        "ci": [
+          0.4066,
+          0.4713
+        ]
+      },
+      "seniority_mismatch_at_10": {
+        "mean": 0.1546,
+        "ci": [
+          0.1358,
+          0.175
+        ]
+      }
+    },
+    "jobswipe_gte_cosine": {
+      "auc": {
+        "mean": 0.7082,
+        "ci": [
+          0.6823,
+          0.7338
+        ]
+      },
+      "precision_at_10": {
+        "mean": 0.4246,
+        "ci": [
+          0.3933,
+          0.4558
+        ]
+      },
+      "ndcg_at_10": {
+        "mean": 0.4429,
+        "ci": [
+          0.4096,
+          0.4768
+        ]
+      },
+      "seniority_mismatch_at_10": {
+        "mean": 0.1488,
+        "ci": [
+          0.1304,
+          0.1692
+        ]
+      }
+    },
+    "jobtinder_lightgbm": {
+      "auc": {
+        "mean": 0.6599,
+        "ci": [
+          0.6391,
+          0.6788
+        ]
+      },
+      "precision_at_10": {
+        "mean": 0.3604,
+        "ci": [
+          0.335,
+          0.3837
+        ]
+      },
+      "ndcg_at_10": {
+        "mean": 0.3934,
+        "ci": [
+          0.3655,
+          0.4217
+        ]
+      },
+      "seniority_mismatch_at_10": {
+        "mean": 0.1596,
+        "ci": [
+          0.1404,
+          0.18
+        ]
+      }
+    }
+  },
+  "gaps_vs_baseline": {
+    "jobswipe_gte_cosine": {
+      "auc": {
+        "mean": 0.0163,
+        "ci": [
+          -0.0044,
+          0.0375
+        ]
+      },
+      "precision_at_10": {
+        "mean": 0.0162,
+        "ci": [
+          -0.0117,
+          0.0437
+        ]
+      },
+      "ndcg_at_10": {
+        "mean": 0.0039,
+        "ci": [
+          -0.0253,
+          0.0331
+        ]
+      },
+      "seniority_mismatch_at_10": {
+        "mean": -0.0058,
+        "ci": [
+          -0.0204,
+          0.0104
+        ]
+      }
+    },
+    "jobtinder_lightgbm": {
+      "auc": {
+        "mean": -0.0321,
+        "ci": [
+          -0.0486,
+          -0.0163
+        ]
+      },
+      "precision_at_10": {
+        "mean": -0.0479,
+        "ci": [
+          -0.0725,
+          -0.0237
+        ]
+      },
+      "ndcg_at_10": {
+        "mean": -0.0456,
+        "ci": [
+          -0.0726,
+          -0.0191
+        ]
+      },
+      "seniority_mismatch_at_10": {
+        "mean": 0.005,
+        "ci": [
+          -0.01,
+          0.0212
+        ]
+      }
+    }
+  },
+  "auc_by_category": {
+    "ACCOUNTANT": {
+      "random": 0.54,
+      "tfidf_cosine": 0.892,
+      "jobswipe_gte_cosine": 0.921,
+      "jobtinder_lightgbm": 0.845
+    },
+    "ADVOCATE": {
+      "random": 0.516,
+      "tfidf_cosine": 0.476,
+      "jobswipe_gte_cosine": 0.363,
+      "jobtinder_lightgbm": 0.491
+    },
+    "AGRICULTURE": {
+      "random": 0.459,
+      "tfidf_cosine": 0.655,
+      "jobswipe_gte_cosine": 0.52,
+      "jobtinder_lightgbm": 0.567
+    },
+    "APPAREL": {
+      "random": 0.536,
+      "tfidf_cosine": 0.761,
+      "jobswipe_gte_cosine": 0.613,
+      "jobtinder_lightgbm": 0.661
+    },
+    "ARTS": {
+      "random": 0.568,
+      "tfidf_cosine": 0.546,
+      "jobswipe_gte_cosine": 0.56,
+      "jobtinder_lightgbm": 0.528
+    },
+    "AUTOMOBILE": {
+      "random": 0.523,
+      "tfidf_cosine": 0.413,
+      "jobswipe_gte_cosine": 0.518,
+      "jobtinder_lightgbm": 0.492
+    },
+    "AVIATION": {
+      "random": 0.473,
+      "tfidf_cosine": 0.66,
+      "jobswipe_gte_cosine": 0.61,
+      "jobtinder_lightgbm": 0.615
+    },
+    "BANKING": {
+      "random": 0.454,
+      "tfidf_cosine": 0.772,
+      "jobswipe_gte_cosine": 0.663,
+      "jobtinder_lightgbm": 0.671
+    },
+    "BPO": {
+      "random": 0.504,
+      "tfidf_cosine": 0.504,
+      "jobswipe_gte_cosine": 0.578,
+      "jobtinder_lightgbm": 0.568
+    },
+    "BUSINESS-DEVELOPMENT": {
+      "random": 0.498,
+      "tfidf_cosine": 0.785,
+      "jobswipe_gte_cosine": 0.833,
+      "jobtinder_lightgbm": 0.743
+    },
+    "CHEF": {
+      "random": 0.44,
+      "tfidf_cosine": 0.908,
+      "jobswipe_gte_cosine": 0.886,
+      "jobtinder_lightgbm": 0.873
+    },
+    "CONSTRUCTION": {
+      "random": 0.462,
+      "tfidf_cosine": 0.785,
+      "jobswipe_gte_cosine": 0.624,
+      "jobtinder_lightgbm": 0.754
+    },
+    "CONSULTANT": {
+      "random": 0.496,
+      "tfidf_cosine": 0.63,
+      "jobswipe_gte_cosine": 0.841,
+      "jobtinder_lightgbm": 0.69
+    },
+    "DESIGNER": {
+      "random": 0.505,
+      "tfidf_cosine": 0.753,
+      "jobswipe_gte_cosine": 0.847,
+      "jobtinder_lightgbm": 0.666
+    },
+    "DIGITAL-MEDIA": {
+      "random": 0.482,
+      "tfidf_cosine": 0.75,
+      "jobswipe_gte_cosine": 0.83,
+      "jobtinder_lightgbm": 0.716
+    },
+    "ENGINEERING": {
+      "random": 0.56,
+      "tfidf_cosine": 0.717,
+      "jobswipe_gte_cosine": 0.836,
+      "jobtinder_lightgbm": 0.652
+    },
+    "FINANCE": {
+      "random": 0.561,
+      "tfidf_cosine": 0.674,
+      "jobswipe_gte_cosine": 0.754,
+      "jobtinder_lightgbm": 0.657
+    },
+    "FITNESS": {
+      "random": 0.472,
+      "tfidf_cosine": 0.756,
+      "jobswipe_gte_cosine": 0.848,
+      "jobtinder_lightgbm": 0.698
+    },
+    "HEALTHCARE": {
+      "random": 0.514,
+      "tfidf_cosine": 0.563,
+      "jobswipe_gte_cosine": 0.459,
+      "jobtinder_lightgbm": 0.606
+    },
+    "HR": {
+      "random": 0.515,
+      "tfidf_cosine": 0.669,
+      "jobswipe_gte_cosine": 0.724,
+      "jobtinder_lightgbm": 0.646
+    },
+    "INFORMATION-TECHNOLOGY": {
+      "random": 0.534,
+      "tfidf_cosine": 0.711,
+      "jobswipe_gte_cosine": 0.779,
+      "jobtinder_lightgbm": 0.586
+    },
+    "PUBLIC-RELATIONS": {
+      "random": 0.513,
+      "tfidf_cosine": 0.762,
+      "jobswipe_gte_cosine": 0.714,
+      "jobtinder_lightgbm": 0.679
+    },
+    "SALES": {
+      "random": 0.468,
+      "tfidf_cosine": 0.656,
+      "jobswipe_gte_cosine": 0.818,
+      "jobtinder_lightgbm": 0.636
+    },
+    "TEACHER": {
+      "random": 0.485,
+      "tfidf_cosine": 0.807,
+      "jobswipe_gte_cosine": 0.86,
+      "jobtinder_lightgbm": 0.798
+    }
+  },
+  "jobtinder_minus_jobswipe": {
+    "auc": {
+      "mean": -0.0484,
+      "ci": [
+        -0.0708,
+        -0.0287
+      ]
+    },
+    "precision_at_10": {
+      "mean": -0.0642,
+      "ci": [
+        -0.0934,
+        -0.0387
+      ]
+    },
+    "ndcg_at_10": {
+      "mean": -0.0495,
+      "ci": [
+        -0.0806,
+        -0.0219
+      ]
+    },
+    "seniority_mismatch_at_10": {
+      "mean": 0.0108,
+      "ci": [
+        -0.0046,
+        0.0271
+      ]
+    }
+  },
+  "duration_seconds": 878.1
+}

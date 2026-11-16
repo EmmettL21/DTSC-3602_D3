@@ -15,7 +15,8 @@ import { buildJobText, buildProfileTexts } from '../repos/jobswipe/supabase/func
 import { extractFromResume } from '../repos/jobswipe/src/lib/resumeExtract.ts';
 
 const [inPath, outPath] = process.argv.slice(2);
-const { resumes, jobs } = JSON.parse(readFileSync(inPath, 'utf8')) as { resumes: string[]; jobs: string[] };
+type JobIn = string | { title: string; description: string; location?: string | null; is_remote?: boolean | null };
+const { resumes, jobs } = JSON.parse(readFileSync(inPath, 'utf8')) as { resumes: string[]; jobs: JobIn[] };
 
 // "Suggested" profile: the onboarding flow where the seeker uploads a resume and keeps
 // every suggestion the "From your resume" card offers (title, skills, summary -> bio).
@@ -27,10 +28,11 @@ const profiles_suggested = resumes.map((text) => {
 // Resume-only profile: the seeker uploads a resume and accepts nothing else.
 const profiles_resume_only = resumes.map((text) => buildProfileTexts({ resume_text: text }));
 
-// The labelled pairs carry only a description, no title / skills / location.
-// The title is unknown, so it is passed as '' and filtered out by compact() — the JD's own
-// first line usually names the role anyway.
-const jobTexts = jobs.map((description) => buildJobText({ title: '', description }).replace(/^Role: /, ''));
+// The labelled pairs carry only a description (a plain string): no title / skills / location,
+// so the empty "Role: " prefix is dropped. Real postings (objects) get JobSwipe's full header.
+const jobTexts = jobs.map((j) =>
+  typeof j === 'string' ? buildJobText({ title: '', description: j }).replace(/^Role: /, '') : buildJobText(j),
+);
 
 writeFileSync(outPath, JSON.stringify({ profiles_suggested, profiles_resume_only, jobs: jobTexts }));
 console.log(`built ${resumes.length} profiles and ${jobs.length} job texts`);
