@@ -31,6 +31,7 @@ The labelled dataset (`cnamuangtoun/resume-job-description-fit`, 8,000 pairs) do
 
 ## Files
 
+- `D3_Model_Evaluation.ipynb`: the whole evaluation and the figures in one notebook, step by step. This is the same code as the `eval/` scripts below; run it from the repo root.
 - `eval/run_evaluation.py`: the whole protocol (data, both splits, every model, metrics, CIs, error analysis). It imports Job-Tinder's own feature, training and metric code unchanged, so candidate B is exactly the shipped model.
 - `eval/jobswipe_texts.mts`: builds the exact strings JobSwipe embeds by importing JobSwipe's own `embeddings.ts` and `resumeExtract.ts`.
 - `eval/make_figures.py`: draws the figures from `results/evaluation.json`.
